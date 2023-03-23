@@ -1,0 +1,24 @@
+name: deploy main
+
+on:
+  push:
+    branches: [ "main" ]
+
+cache:
+  directories:
+    - node_modules
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: install
+        run: yarn install
+
+      - name: build
+        run: yarn build
+
+
+      - name: deploy
+        run: yarn deploy
