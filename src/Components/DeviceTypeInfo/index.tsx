@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Text from 'UI/Text'
+import { DeviceTypeContext } from "Contexts/DeviceType";
+import styles from './styles.module.css';
 
-type DeviceTypeInfoProps = {
-    text: string,
-}
+const DeviceTypeInfo: React.FC = () => {
+    const userAgent = useContext(DeviceTypeContext)
 
-const DeviceTypeInfo: React.FC<DeviceTypeInfoProps> = ({ text }) => {
-    return <Text text={"Device type: " + text}/>
+    return <div className={styles.container}><Text text={"Device type: " + userAgent}/></div>
 }
 
 export default DeviceTypeInfo;

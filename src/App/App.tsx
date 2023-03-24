@@ -8,7 +8,7 @@ function App() {
   return (
     <div className={styles.container}>
       <WindowSizeInfo text="200x200" />
-      <DeviceTypeInfo text="apple" />
+      <DeviceTypeInfo />
       <ThemeToggle />
     </div>
   );
