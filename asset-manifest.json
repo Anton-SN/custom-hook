@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/custom-hook/static/css/main.c124b6f8.css",
-    "main.js": "/custom-hook/static/js/main.ca249959.js",
+    "main.css": "/custom-hook/static/css/main.c76504d4.css",
+    "main.js": "/custom-hook/static/js/main.0cc25ba5.js",
     "static/js/787.d808d355.chunk.js": "/custom-hook/static/js/787.d808d355.chunk.js",
-    "static/media/logo.svg": "/custom-hook/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/custom-hook/index.html",
-    "main.c124b6f8.css.map": "/custom-hook/static/css/main.c124b6f8.css.map",
-    "main.ca249959.js.map": "/custom-hook/static/js/main.ca249959.js.map",
+    "main.c76504d4.css.map": "/custom-hook/static/css/main.c76504d4.css.map",
+    "main.0cc25ba5.js.map": "/custom-hook/static/js/main.0cc25ba5.js.map",
     "787.d808d355.chunk.js.map": "/custom-hook/static/js/787.d808d355.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c124b6f8.css",
-    "static/js/main.ca249959.js"
+    "static/css/main.c76504d4.css",
+    "static/js/main.0cc25ba5.js"
   ]
 }
