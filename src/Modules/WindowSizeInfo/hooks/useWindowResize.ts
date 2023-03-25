@@ -1,31 +1,33 @@
 import { useEffect } from "react";
-import {StateType, DispatchType, ActionPoints} from '../Context/@types';
+import { useThrottle } from "hook/useThrottle";
+import { StateType, DispatchType, ActionPoints } from '../Context/@types';
 
 export const useWindowResize = (state: StateType, dispatch: DispatchType) => {
-    useEffect(() => {
-        const onResize = () =>{
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            console.log(width, height, state)
+    const onResize = () =>{
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        console.log(width, height, state)
 
-            if (state.height === height && state.width !== width) {
-                console.log(1)
-                dispatch({ type: ActionPoints.CHANGE_WIDTH, value: window.innerWidth })
-            }
-            if (state.height !== height && state.width === width) {
-                console.log(2)
-                dispatch({ type: ActionPoints.CHANGE_HEIGHT, value: window.innerHeight })}
-            if (state.height !== height && state.width !== width) {
-                console.log(3)
-                dispatch({ type: ActionPoints.CHANGE_SIZE, value: { width: window.innerWidth, height: window.innerHeight} })
-            }
+        if (state.height === height && state.width !== width) {
+            dispatch({ type: ActionPoints.CHANGE_WIDTH, value: window.innerWidth })
         }
 
+        if (state.height !== height && state.width === width) {
+            dispatch({ type: ActionPoints.CHANGE_HEIGHT, value: window.innerHeight })
+        }
 
-        window.addEventListener('resize', onResize)
+        if (state.height !== height && state.width !== width) {
+            dispatch({ type: ActionPoints.CHANGE_SIZE, value: { width: window.innerWidth, height: window.innerHeight} })
+        }
+    }
+
+    const onResizeThrottled = useThrottle(onResize, 500)
+
+    useEffect(() => {
+        window.addEventListener('resize', onResizeThrottled)
 
         return () => {
-            window.removeEventListener('resize', onResize)
+            window.removeEventListener('resize', onResizeThrottled)
         }
     }, [])
 }
