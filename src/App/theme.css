@@ -1,0 +1,27 @@
+:root {
+    --text-light: rgb(0, 0, 0);
+    --text-dark: rgb(255, 255, 255);
+
+    --bg-primary-light: rgb(245, 245, 245);
+    --bg-primary-dark: rgb(29, 29, 58);
+
+    --bg-second-light: rgb(255, 255, 255);
+    --bg-second-dark: rgb(0, 0, 0);
+}
+
+.light-theme {
+    --text: var(--text-light);
+    --bg: var(--bg-primary-light);
+    --bg-toggle: var(--bg-second-light);
+}
+
+.dark-theme {
+    --text: var(--text-dark);
+    --bg: var(--bg-primary-dark);
+    --bg-toggle: var(--bg-second-dark);
+}
+
+.App {
+    background-color: var(--bg);
+    color: var(--text);
+}

@@ -1,12 +1,15 @@
 import React from 'react';
 import { WindowSizeContextProvider, WindowSizeInfo} from "../Modules/WindowSizeInfo";
 import { DeviceTypeInfo } from "../Modules/DeviceTypeInfo";
-import { ThemeToggle } from "../Modules/ThemeToggle";
+import { ThemeToggle, useTheme } from "../Modules/ThemeToggle";
 import styles from './styles.module.css';
+import './theme.css';
 
 function App() {
+    const { theme } = useTheme();
+
   return (
-    <div className={styles.container}>
+    <div className={`App ${theme} ${styles.container}`}>
       <WindowSizeContextProvider>
         <WindowSizeInfo />
       </WindowSizeContextProvider>
