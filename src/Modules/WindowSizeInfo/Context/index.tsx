@@ -1,18 +1,17 @@
-import React, { createContext, useReducer } from "react";
+import React, {createContext, useReducer} from "react";
 import { ChildrenPropsType } from "@types.common";
-import { WindowSizeContextType, ActionType, SizeType, ActionPoints } from "./@types";
+import { WindowSizeContextType, ActionType, StateType, ActionPoints } from "./@types";
+import { useWindowResize } from '../hooks/useWindowResize';
 
 const WindowSizeContext = createContext<WindowSizeContextType | null>(null);
 
-const reducer = (state: SizeType, action: ActionType) => {
+const reducer = (state: StateType, action: ActionType) => {
     switch (action.type) {
         case ActionPoints.CHANGE_WIDTH: {
-            state.width = action.value
-            return state;
+            return { height: state.height, width: action.value };
         }
         case ActionPoints.CHANGE_HEIGHT: {
-            state.height = action.value
-            return state;
+            return { height: action.value, width: state.width };
         }
         case ActionPoints.CHANGE_SIZE: {
             return action.value;
@@ -25,10 +24,9 @@ const reducer = (state: SizeType, action: ActionType) => {
 const WindowSizeContextProvider: React.FC<ChildrenPropsType> = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, { height: window.innerHeight, width: window.innerWidth });
 
-    const value = {
-        state,
-        dispatch,
-    }
+    useWindowResize(state, dispatch);
+
+    const value = { state }
 
     return (
         <WindowSizeContext.Provider value={value}>
