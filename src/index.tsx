@@ -4,7 +4,7 @@ import './index.css';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 
-import { ThemeProvider } from "./Contexts/Theme";
+import { ThemeProvider } from "./Modules/ThemeToggle";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

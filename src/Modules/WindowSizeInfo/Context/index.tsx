@@ -1,23 +1,8 @@
 import React, { createContext, useReducer } from "react";
-import { WindowSizeType, ChildrenPropsType } from "@types";
+import { ChildrenPropsType } from "@types.common";
+import { WindowSizeContextType, ActionType, SizeType, ActionPoints } from "./@types";
 
-const WindowSizeContext = createContext<WindowSizeType | null>(null);
-
-export enum ActionPoints {
-    CHANGE_WIDTH = "CHANGE_WIDTH",
-    CHANGE_HEIGHT = "CHANGE_HEIGHT",
-    CHANGE_SIZE = "CHANGE_SIZE"
-}
-
-export type SizeType = { height: number, width: number }
-
-export type ActionType = {
-    type: ActionPoints.CHANGE_WIDTH | ActionPoints.CHANGE_HEIGHT;
-    value: number;
-} | {
-    type: ActionPoints.CHANGE_SIZE;
-    value: SizeType;
-};
+const WindowSizeContext = createContext<WindowSizeContextType | null>(null);
 
 const reducer = (state: SizeType, action: ActionType) => {
     switch (action.type) {

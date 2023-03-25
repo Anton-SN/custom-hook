@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
-import { ThemeContextType, ChildrenPropsType } from "@types";
+import { ChildrenPropsType } from "@types.common";
+import { ThemeContextType } from "./@types";
 
 const LightTheme = 'light';
 const DarkTheme = 'dark';
