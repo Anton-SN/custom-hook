@@ -1,14 +1,16 @@
 import React from 'react';
-import ThemeToggle from "../Components/ThemeToggle";
-import WindowSizeInfo from "../Components/WindowSizeInfo";
-import DeviceTypeInfo from "../Components/DeviceTypeInfo";
+import { WindowSizeProvider, WindowSizeInfo} from "../Modules/WindowSizeInfo";
+import { DeviceTypeInfo } from "../Modules/DeviceTypeInfo";
+import { ThemeToggle } from "../Modules/ThemeToggle";
 import styles from './styles.module.css';
 
 function App() {
   return (
     <div className={styles.container}>
-      <WindowSizeInfo text="200x200" />
-      <DeviceTypeInfo text="apple" />
+      <WindowSizeProvider>
+        <WindowSizeInfo />
+      </WindowSizeProvider>
+      <DeviceTypeInfo />
       <ThemeToggle />
     </div>
   );

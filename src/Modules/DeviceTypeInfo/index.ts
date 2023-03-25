@@ -1,0 +1,1 @@
+export { DeviceTypeInfo } from './Component'
