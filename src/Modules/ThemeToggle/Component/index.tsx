@@ -1,11 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Toggle from 'UI/Toggle'
-import { ThemeContext, LightTheme } from "../Context";
-import { ThemeContextType } from "../Context/@types";
+import { useTheme } from "../hook/useTheme";
 
 export const ThemeToggle: React.FC = () => {
-    const { theme, toggleTheme } = useContext(ThemeContext) as ThemeContextType;
-    const toggleText  = () => theme === LightTheme ? 'light-theme' : 'dark-theme';
+    const { theme, toggleTheme } = useTheme();
 
-    return <Toggle callback={toggleTheme} text={toggleText()}/>
+    return <Toggle callback={toggleTheme} text={theme}/>
 }

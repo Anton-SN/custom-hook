@@ -2,8 +2,8 @@ import React, { createContext, useState } from "react";
 import { ChildrenPropsType } from "@types.common";
 import { ThemeContextType } from "./@types";
 
-const LightTheme = 'light';
-const DarkTheme = 'dark';
+const LightTheme = 'light-theme';
+const DarkTheme = 'dark-theme';
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
@@ -18,11 +18,7 @@ const ThemeProvider: React.FC<ChildrenPropsType> = ({ children }) => {
         }
     }
 
-    const value = {
-        theme,
-        setTheme,
-        toggleTheme
-    }
+    const value = { theme, toggleTheme }
 
     return (
         <ThemeContext.Provider value={value}>
@@ -31,4 +27,4 @@ const ThemeProvider: React.FC<ChildrenPropsType> = ({ children }) => {
     );
 };
 
-export { ThemeContext, ThemeProvider, LightTheme };
+export { ThemeContext, ThemeProvider };
