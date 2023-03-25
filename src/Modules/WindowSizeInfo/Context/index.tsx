@@ -22,7 +22,7 @@ const reducer = (state: SizeType, action: ActionType) => {
     }
 }
 
-const WindowSizeProvider: React.FC<ChildrenPropsType> = ({ children }) => {
+const WindowSizeContextProvider: React.FC<ChildrenPropsType> = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, { height: window.innerHeight, width: window.innerWidth });
 
     const value = {
@@ -37,4 +37,4 @@ const WindowSizeProvider: React.FC<ChildrenPropsType> = ({ children }) => {
     );
 };
 
-export { WindowSizeContext, WindowSizeProvider };
+export { WindowSizeContext, WindowSizeContextProvider };

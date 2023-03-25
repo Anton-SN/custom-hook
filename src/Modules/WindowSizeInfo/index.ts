@@ -1,2 +1,2 @@
 export { WindowSizeInfo } from './Component'
-export { WindowSizeProvider } from './Context'
+export { WindowSizeContextProvider } from './Context'
