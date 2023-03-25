@@ -1,6 +1,9 @@
 .toggle {
     width: 130px;
+    background-color: var(--bg-toggle);
+    color: var(--text);
     padding: 5px 15px;
     margin: 5px 10px;
-    font-size: 18px;
+    border: 2px solid var(--text);
+    cursor: pointer;
 }
