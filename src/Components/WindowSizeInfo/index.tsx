@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Text from 'UI/Text'
+import { WindowSizeContext } from "Contexts/WindowSize";
+import {WindowSizeType} from "../../@types";
 
-type WindowSizeInfoProps = {
-    text: string,
-}
-
-const WindowSizeInfo: React.FC<WindowSizeInfoProps> = ({ text }) => {
-    return <Text text={"Window size: " + text}/>
+const WindowSizeInfo: React.FC = () => {
+    const { state } = useContext(WindowSizeContext) as WindowSizeType
+    console.log(state)
+    return <Text text={`Window size: ${state.width} × ${state.height}`}/>
 }
 
 export default WindowSizeInfo;

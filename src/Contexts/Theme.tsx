@@ -1,16 +1,12 @@
 import React, { createContext, useState } from "react";
-import { ThemeContextType } from "@types.theme";
+import { ThemeContextType, ChildrenPropsType } from "@types";
 
 const LightTheme = 'light';
 const DarkTheme = 'dark';
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
-type Props = {
-    children: JSX.Element | JSX.Element[]
-}
-
-const ThemeProvider: React.FC<Props> = ({ children }) => {
+const ThemeProvider: React.FC<ChildrenPropsType> = ({ children }) => {
     const [theme, setTheme] = useState(LightTheme);
 
     function toggleTheme() {
