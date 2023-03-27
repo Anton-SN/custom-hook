@@ -25,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
-    "test": "react-scripts test --watchAll=false",
+    "test-dev": "react-scripts test",
+    "test-prod": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject"
   },
   "browserslist": {
