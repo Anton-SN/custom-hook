@@ -1,12 +1,11 @@
-import { useEffect } from "react";
-import { useThrottle } from "hook/useThrottle";
-import { StateType, DispatchType, ActionPoints } from '../Context/@types';
+import { useEffect } from 'react';
+import { useThrottle } from 'hook/useThrottle';
+import { type StateType, type DispatchType, ActionPoints } from '../Context/@types';
 
-export const useWindowResize = (state: StateType, dispatch: DispatchType) => {
-    const onResize = () =>{
+export const useWindowResize = (state: StateType, dispatch: DispatchType): void => {
+    const onResize = (): void =>{
         const width = window.innerWidth;
         const height = window.innerHeight;
-        console.log(width, height, state)
 
         if (state.height === height && state.width !== width) {
             dispatch({ type: ActionPoints.CHANGE_WIDTH, value: window.innerWidth })

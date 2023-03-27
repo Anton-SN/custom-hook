@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-type ToggleProps = {
+interface ToggleProps {
     text: string,
     callback: () => void;
 }
 
 const Toggle: React.FC<ToggleProps> = ({ text, callback }) => {
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
         event.preventDefault();
         callback();
     };

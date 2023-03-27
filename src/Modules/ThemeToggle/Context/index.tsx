@@ -1,6 +1,6 @@
-import React, { createContext, useState } from "react";
-import { ChildrenPropsType } from "@types.common";
-import { ThemeContextType } from "./@types";
+import React, { createContext, useState } from 'react';
+import { type ChildrenPropsType } from '@types.common';
+import { type ThemeContextType } from './@types';
 
 const LightTheme = 'light-theme';
 const DarkTheme = 'dark-theme';
@@ -10,7 +10,7 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 const ThemeProvider: React.FC<ChildrenPropsType> = ({ children }) => {
     const [theme, setTheme] = useState(LightTheme);
 
-    function toggleTheme() {
+    function toggleTheme(): void {
         if (theme === DarkTheme) {
             setTheme(LightTheme);
         } else {
@@ -27,4 +27,4 @@ const ThemeProvider: React.FC<ChildrenPropsType> = ({ children }) => {
     );
 };
 
-export { ThemeContext, ThemeProvider };
+export { ThemeContext, ThemeProvider, LightTheme, DarkTheme };
