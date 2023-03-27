@@ -1,5 +1,5 @@
 import React from 'react';
-import { WindowSizeContextProvider, WindowSizeInfo} from "../Modules/WindowSizeInfo";
+import { WindowSizeInfo} from "../Modules/WindowSizeInfo";
 import { DeviceTypeInfo } from "../Modules/DeviceTypeInfo";
 import { ThemeToggle, useTheme } from "../Modules/ThemeToggle";
 import styles from './styles.module.css';
@@ -10,9 +10,7 @@ function App() {
 
   return (
     <div className={`App ${theme} ${styles.container}`}>
-      <WindowSizeContextProvider>
-        <WindowSizeInfo />
-      </WindowSizeContextProvider>
+      <WindowSizeInfo />
       <DeviceTypeInfo />
       <ThemeToggle />
     </div>
