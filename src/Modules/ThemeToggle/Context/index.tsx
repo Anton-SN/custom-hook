@@ -27,4 +27,4 @@ const ThemeProvider: React.FC<ChildrenPropsType> = ({ children }) => {
     );
 };
 
-export { ThemeContext, ThemeProvider };
+export { ThemeContext, ThemeProvider, LightTheme, DarkTheme };
