@@ -1,11 +1,11 @@
-import React, {createContext, useReducer} from "react";
-import { ChildrenPropsType } from "@types.common";
-import { WindowSizeContextType, ActionType, StateType, ActionPoints } from "./@types";
+import React, {createContext, useReducer} from 'react';
+import { type ChildrenPropsType } from '@types.common';
+import { type WindowSizeContextType, type ActionType, type StateType, ActionPoints } from './@types';
 import { useWindowResize } from '../hooks/useWindowResize';
 
 const WindowSizeContext = createContext<WindowSizeContextType | null>(null);
 
-const reducer = (state: StateType, action: ActionType) => {
+const reducer = (state: StateType, action: ActionType): StateType => {
     switch (action.type) {
         case ActionPoints.CHANGE_WIDTH: {
             return { height: state.height, width: action.value };

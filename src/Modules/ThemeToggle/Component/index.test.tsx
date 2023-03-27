@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import { ThemeToggle } from "./index";
-import {ThemeProvider, LightTheme, DarkTheme} from "../Context";
+import { ThemeToggle } from './index';
+import {ThemeProvider, LightTheme, DarkTheme} from '../Context';
 
 describe('Theme toggle', () => {
     test('Toggle exist', () => {

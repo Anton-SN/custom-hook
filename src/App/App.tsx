@@ -1,11 +1,11 @@
 import React from 'react';
-import { WindowSizeInfo} from "../Modules/WindowSizeInfo";
-import { DeviceTypeInfo } from "../Modules/DeviceTypeInfo";
-import { ThemeToggle, useTheme } from "../Modules/ThemeToggle";
+import { WindowSizeInfo} from '../Modules/WindowSizeInfo';
+import { DeviceTypeInfo } from '../Modules/DeviceTypeInfo';
+import { ThemeToggle, useTheme } from '../Modules/ThemeToggle';
 import styles from './styles.module.css';
 import './theme.css';
 
-function App() {
+const App: React.FC = () => {
     const { theme } = useTheme();
 
   return (
@@ -15,6 +15,6 @@ function App() {
       <ThemeToggle />
     </div>
   );
-}
+};
 
 export default App;

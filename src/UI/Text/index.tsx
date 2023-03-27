@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-type TextProps = {
+interface TextProps {
     text: string,
 }
 

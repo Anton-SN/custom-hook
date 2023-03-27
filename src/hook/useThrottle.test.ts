@@ -1,5 +1,5 @@
-import { renderHook } from "@testing-library/react-hooks";
-import { useThrottle } from "./useThrottle";
+import { renderHook } from '@testing-library/react-hooks';
+import { useThrottle } from './useThrottle';
 describe('useThrottle', () => {
     beforeAll(() => {
         jest.useFakeTimers();
@@ -16,7 +16,7 @@ describe('useThrottle', () => {
     test('should return callback', () => {
         const mockCb = jest.fn()
         const { result } = renderHook(() => useThrottle(mockCb));
-        expect(typeof result.current).toBe("function")
+        expect(typeof result.current).toBe('function')
     })
 
     test('should work in periods and should calls 1 time per period', () => {
