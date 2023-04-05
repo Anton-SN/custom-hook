@@ -4,14 +4,12 @@ import { DeviceTypeInfo } from '../Modules/DeviceTypeInfo';
 import { ThemeToggle } from '../Modules/Theme';
 import styles from './styles.module.css';
 
-const App: React.FC = () => {
-  return (
+const App: React.FC = () => (
     <div className={`App ${styles.container}`}>
       <WindowSizeInfo />
       <DeviceTypeInfo />
       <ThemeToggle />
     </div>
-  );
-};
+)
 
 export default App;

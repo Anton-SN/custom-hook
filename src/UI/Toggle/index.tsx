@@ -6,13 +6,7 @@ interface ToggleProps {
     callback: () => void;
 }
 
-const Toggle: React.FC<ToggleProps> = ({ text, callback }) => {
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
-        event.preventDefault();
-        callback();
-    };
-
-    return <button className={styles.toggle} onClick={handleClick}>{text}</button>
-}
+const Toggle: React.FC<ToggleProps> = ({ text, callback }) =>
+    <button className={styles.toggle} onClick={callback}>{text}</button>
 
 export default Toggle;
